@@ -4,16 +4,20 @@
     <title>FlightMetrics</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-    <div class="container">
-      <ul class="nav nav-tabs">
-        <li><%= link_to "FlightMetrics", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
-      </ul>
+    <div class="w3-top">
+      <div class="w3-bar w3-white w3-wide w3-padding w3-card-2">
+        <a><b><%= link_to "FlightMetrics", root_path, class: "w3-bar-item w3-button" %></b></a>
+        <div class="w3-right w3-hide-small">
+          <a><%= link_to "About", about_path, class: "w3-bar-item w3-button" %></a>
+          <a><%= link_to "Workspaces", root_path, class: "w3-bar-item w3-button" %></a>
+          <a><%= link_to "Contact", about_path, class: "w3-bar-item w3-button" %></a>
+        </div>
+      </div>
       
       <% if flash[:notice] %>
         <div class="alert alert-success">
