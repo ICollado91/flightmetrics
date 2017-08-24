@@ -19,6 +19,15 @@
         </div>
       </div>
       
+      
+      <% if user_signed_in? %>
+        Signed in as: <strong class="w3-bar-item w3-button"><%= current_user.email %></strong> |
+        <%= link_to ' - Edit profile ', edit_user_registration_path, :class => 'navbar-link pull-right' %> - <%= link_to " Sign Out ", destroy_user_session_path, method: :delete, :class => 'navbar-link pull-right'  %>
+      <% else %>
+        <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link pull-right'  %> -
+        <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link pull-right'  %>
+      <% end %>
+      
       <% if flash[:notice] %>
         <div class="alert alert-success">
           <button type="button" class="close" data-dismiss="alert">&times;</button>
